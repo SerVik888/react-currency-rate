@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react'
+import './App.css'
+import s from './App.css'
+import { CurrencyRate } from './components/currencyRate/CurrencyRate'
+import { RateContext } from './context/rateContext/RateContext'
 
 function App() {
+  const { setData, setDataOneRate, rates, dataOneRate } = useContext(RateContext)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={s.app}>
+      <h1>Курс валют</h1>
+      <CurrencyRate rates={rates} setData={setData} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

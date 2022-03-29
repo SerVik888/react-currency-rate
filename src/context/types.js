@@ -1,0 +1,3 @@
+export const GET_DATA = 'GET_DATA'
+export const GET_DATA_FOR_TEN_DAYS = 'GET_DATA_FOR_TEN_DAYS'
+export const GET_DATA_ONE_RATE = 'GET_DATA_ONE_RATE'
