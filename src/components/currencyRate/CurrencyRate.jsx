@@ -7,7 +7,7 @@ export const CurrencyRate = ({ rates, setData, setDataOneRate, dataOneRate }) =>
 
   useEffect(() => {
     setData()
-  }, [])
+  }, [setData])
 
   if (!rates) {
     return <h1>Подождите идёт загрузка....</h1>

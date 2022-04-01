@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useCallback, useReducer } from 'react'
 import { API } from '../../api'
 import { GET_DATA, GET_DATA_FOR_TEN_DAYS, GET_DATA_ONE_RATE } from '../types'
 import { RateContext } from './RateContext'
@@ -13,11 +13,11 @@ export const RateState = ({ children }) => {
 
   const [state, dispatch] = useReducer(rateReducer, initialState)
 
-  const setData = async () => {
+  const setData = useCallback(async () => {
     const data = await API.getRates()
     dispatch({ type: GET_DATA, data })
     await setCurrencyRatesForTenDays(data.PreviousURL)
-  }
+  }, [])
 
   const setCurrencyRatesForTenDays = async url => {
     let previousURL = url
