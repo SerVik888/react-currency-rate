@@ -11,11 +11,14 @@ const handlers = {
   }),
   [GET_DATA_ONE_RATE]: (state, action) => ({
     ...state,
-    dataOneRate: state.currencyRatesForTenDays.map(rates => {
-      Object.values(rates.Valute).filter(rate => {
-        return rate === action.rate
+    dataOneRate: state.currencyRatesForTenDays
+      .map(rates => {
+        return {
+          date: rates.Date.substring(0, 10),
+          currency: rates.Valute[action.rate],
+        }
       })
-    }),
+      .reverse(),
   }),
 
   DEFAULT: state => state,

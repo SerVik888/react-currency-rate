@@ -1,0 +1,14 @@
+
+.itemList {
+    position: relative;
+    max-width: 230px;
+}
+.itemList:hover {
+    cursor: pointer;
+    background-color: #999;
+}
+.listTenDays {
+    position: absolute;
+    left:300px;
+    top:100px;
+}

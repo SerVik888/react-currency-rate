@@ -10,7 +10,7 @@ function App() {
   return (
     <div className={s.app}>
       <h1>Курс валют</h1>
-      <CurrencyRate rates={rates} setData={setData} />
+      <CurrencyRate rates={rates} setData={setData} setDataOneRate={setDataOneRate} dataOneRate={dataOneRate} />
     </div>
   )
 }
