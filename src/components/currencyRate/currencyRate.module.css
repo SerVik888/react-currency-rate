@@ -1,7 +1,9 @@
 
+.currencyList {
+    max-width: 230px;
+}
 .itemList {
     position: relative;
-    max-width: 230px;
 }
 .itemList:hover {
     cursor: pointer;

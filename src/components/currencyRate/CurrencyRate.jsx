@@ -25,7 +25,7 @@ export const CurrencyRate = ({ rates, setData, setDataOneRate, dataOneRate }) =>
 
   return (
     <>
-      <ul>
+      <ul className={s.currencyList}>
         {Object.values(rates).map(currency => (
           <Tooltip text={currency.Name} key={currency.ID} onChange={e => console.log(e)}>
             <li className={s.itemList} onClick={() => getDataOneRate(currency.CharCode)}>
